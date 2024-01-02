@@ -1,7 +1,7 @@
-import Categories from "@/components/categories1"
-import Footer from "@/components/footer1"
-import Header from "@/components/header1"
-import PostsSection from "@/components/postsSection1"
+import Categories from "@/components/categories"
+import Footer from "@/components/footer"
+import Header from "@/components/header"
+import PostsSection from "@/components/postsSection"
 export default function Home() {
   return (
       <main >

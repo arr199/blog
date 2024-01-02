@@ -1,6 +1,6 @@
 import { Menu, Search } from "lucide-react"
-import SocialIons from "./socialsIcons1"
-import Wrapper from "./wrapper1"
+import SocialIons from "./socialsIcons"
+import Wrapper from "./wrapper"
 
 
 export default function Header (): JSX.Element {

@@ -1,7 +1,7 @@
 import { website } from "@/lib/data"
-import Wrapper from "./wrapper1"
+import Wrapper from "./wrapper"
 import { ArrowRight } from "lucide-react"
-import SocialIons from "./socialsIcons1"
+import SocialIons from "./socialsIcons"
 import { categories } from "@/lib/data"
 
 export default function Footer (): JSX.Element {

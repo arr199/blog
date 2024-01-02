@@ -1,6 +1,6 @@
 
 import { categories } from "@/lib/data";
-import Wrapper from "./wrapper1";
+import Wrapper from "./wrapper";
 
 export default function Categories (): JSX.Element {
  return (
