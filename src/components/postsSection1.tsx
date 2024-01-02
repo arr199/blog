@@ -1,6 +1,6 @@
 import { Posts } from "@/lib/data"
 import Image from "next/image"
-import Wrapper from "./Wrapper"
+import Wrapper from "./wrapper1"
 
 export default function PostsSection (): JSX.Element {
   const posts = Posts ?? []

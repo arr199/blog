@@ -1,4 +1,4 @@
-import Categories from "@/components/Categories"
+import Categories from "@/components/categories1"
 
 interface Post {
     title : string 
