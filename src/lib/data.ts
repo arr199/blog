@@ -12,7 +12,7 @@ interface Post {
 export const categories = ["News" , "Reviews" ,"Guides" , "Videos" , "Podcast" , "Game Culture" , "Features"]
 
 export const website = "Blog"
-export const Posts : Post[] = [
+export const posts : Post[] = [
     {
         title : "Unseen Dragons Gets March Release Date And New Trailer" ,
         category : ["News"] , 

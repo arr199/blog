@@ -6,27 +6,29 @@ import { categories } from "@/lib/data"
 
 export default function Footer (): JSX.Element {
   return (
-        <div className='bg-black text-white flex flex-col'>
-            <Wrapper className="flex flex-col items-center px-10 text-center py-4">
+        <div className='bg-black text-white flex flex-col '>
+            <Wrapper className="flex flex-col items-center px-10 text-center py-4 max-w-[800px]">
                 <p className="text-balance">
                     At {website}, every click is an adventure in the gaming world. 
                     Whether you’re a casual or  hardcore gamer, we’re your 
                     go-to for the latest news, tips, and trends.
                 </p>
-                <p className="mt-6 text-balance">Subscribe to our newsletters. We’ll keep you in the loop.</p>
-                <form className="flex justify-center bg-black  items-center border-slate-500 border-[1px]  mt-4 w-full ">
-                        <input className="py-3 px-2 w-full  outline-none text-black" 
+                <p className="mt-6 md:mt-12 text-balance">Subscribe to our newsletters. We’ll keep you in the loop.</p>
+                <form className=" flex justify-center bg-black  items-center border-slate-500 border-[1px]  mt-4 w-full ">
+                        <input className="py-3 px-4 w-full  outline-none text-black" 
                         type="text"  
-                        placeholder="Type your email"/>
+                        placeholder="Type your email..."/>
                         <button>
                             <ArrowRight className="w-20"></ArrowRight>
                         </button>
                 </form>
-                <SocialIons></SocialIons>
-                <ul className="flex flex-wrap text-center gap-6 justify-center my-6">
+                <div className="md:mt-6">
+                    <SocialIons></SocialIons>
+                </div>
+                <ul className="flex md:flex-nowrap flex-wrap text-center gap-6 justify-center my-6">
                     {categories?.map( e => (
                         <li 
-                            className="cursor-pointer"
+                            className="cursor-pointer whitespace-nowrap"
                             key={e}>{e}
                         </li>
                     ) )}
