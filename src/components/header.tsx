@@ -1,6 +1,6 @@
 import { Menu, Search } from "lucide-react"
 import SocialIons from "./socialsIcons"
-import { categories } from "@/lib/data"
+import { categories, website } from "@/lib/data"
 
 
 export default function Header (): JSX.Element {
@@ -18,7 +18,7 @@ export default function Header (): JSX.Element {
                             <Search className="w-20 rotate-[90grad]"></Search>
                         </div>
                     </div>
-                    <h1 className=" md:mt-10 mt-4 md:text-7xl text-5xl font-bold">SPIEL</h1>     
+                    <h1 className=" md:mt-10 mt-4 md:text-7xl text-5xl font-bold">{website}</h1>     
                     <ul className="mt-4 mb-4 flex  gap-4">
                          <Menu className="md:hidden cursor-pointer  text-white"></Menu>
                          {categories?.map( categorie => (
@@ -27,6 +27,7 @@ export default function Header (): JSX.Element {
                          ))}
                     </ul>
               </div>
+                            
    </header>  
   )
 }

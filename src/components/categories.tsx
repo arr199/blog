@@ -12,7 +12,7 @@ export default function Categories (): JSX.Element {
                 <div className="flex flex-col md:flex-row flex-wrap  mt-4 font-semibold">
                     {categories?.map( (categorie) => (
                         <Link href="#" key={categorie} 
-                        className="text-3xl md:text-5xl lg:text-7xl hover:text-blue-500 cursor-pointer ">
+                        className="text-3xl md:text-5xl lg:text-7xl hover:text-blue-500 cursor-pointer w-max">
                         {categorie}.
                         </Link>
                     ))}
