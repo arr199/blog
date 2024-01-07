@@ -10,33 +10,31 @@ export interface Props {
 
 export default async function Page({ searchParams, params }: Props):Promise<JSX.Element>  {
   const id = params.id;
-  const post : Post = posts.filter( (e : any) => e.id === id)[0]
-  
-  const element = await payload.findByID({
+  const post  = await payload.findByID({
     collection : "posts",
-    id : "6599b285c5337e91ce3e2383"
+    id
   })
-
+ const category = Object.keys(post.category[0]).map( e =>  post.category[0][e as keyof object] === true ? e : false  ).filter(Boolean)
 
   return (
     <div className="">
-      <div className="px-4  self-start  bg-black text-white text-center">
+      <div className="px-4  self-start  bg-black text-white text-center pb-4">
         <div className="relative w-full h-full aspect-video ">
           <Image
             className=""
-            src={post.imageUrl}
+            src={`${process.env.SERVER_PUBLIC_URL}/posts/${post.filename}`}
             fill
             alt="post image">
           </Image>
         </div>
-        <p className="mt-2">{post?.category.join(", ")}</p>
+        <p className="mt-2">{category.join(", ")}</p>
         <h2 className="text-4xl font-bold py-2  md:text-5xl ">{post.title}</h2>
         <p className="text-neutral-500 ">{post.author}</p>
       </div>
-      <div>
+      <div className="p-4 text-pretty">
         <p 
         className="mt-4"
-        >{element.content.map( (e,index) => (<p className="mt-4 " key={index}>{e.paragraph}</p>))}</p> 
+        >{post.content.map( (e,index) => (<p className="mt-4 " key={index}>{e.paragraph}</p>))}</p> 
       </div>
     </div>
   );

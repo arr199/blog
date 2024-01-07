@@ -1,3 +1,4 @@
+
 import { posts } from "@/lib/data"
 import Image from "next/image"
 import Wrapper from "./wrapper"
@@ -5,13 +6,13 @@ import Link from "next/link"
 import payload from "payload"
 
 export default async function PostsSection (): Promise<JSX.Element> {
-const { docs : posts  } = await payload.find({
+    const { docs : posts  } = await payload.find({
     collection : "posts" ,
-    limit : 4
+    limit : 10
 })
 
-console.log("HELLO THERE" ,  posts[0].category)
-    
+
+
 return (
    <Wrapper className='flex flex-col justify-center mt-6 '>
         <h2 className="text-2xl font-semibold">Latest</h2>
@@ -20,17 +21,16 @@ return (
         <div className="grid grid-cols-1 place-items-center md:grid-cols-3 lg:grid-cols-4  gap-10 ">
             {posts?.map( (post , index)   => {
                 const categories =  Object.keys(post.category?.[0]).map( e =>  post?.category[0][e as keyof object] === true ? e : false).filter(Boolean)
-                console.log(categories) 
-                        
-            
+                console.log("images" , post.filename) 
            
            return  (<div key={index} className="mt-6 self-start ">
                     <div className="relative w-full h-full aspect-video ">
                         <Image 
-                        className=""
-                        src={post?.imageUrl}
-                        fill
-                        alt="post image">
+                            className="w-40 h-40"
+                            src={`${process.env.SERVER_PUBLIC_URL}/posts/${post.filename}`}
+                            loading="lazy"
+                            alt="post image"
+                            fill>
                         </Image>
                     </div>
                     <p className="mt-2">{categories.join(", ")}</p>

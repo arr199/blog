@@ -3,6 +3,7 @@ import { categories } from "../../lib/data"
 
 export const Posts : CollectionConfig = {
     slug : "posts" ,
+    access : { read : () => true  } ,
     fields : [
         { 
             name : "title" , 
@@ -16,11 +17,10 @@ export const Posts : CollectionConfig = {
         },
         {   name : "category" , 
             type : "array" ,
-            fields : categories.map( e => ( { name : e.toLowerCase() , type : "checkbox" ,   }  )),
+            fields : categories.map( e => ( { name : e.toLowerCase() , type : "checkbox" ,   required : true}  )),
             required : true ,
             maxRows : 1 ,
             minRows : 1 ,
-            
          },
          
          { 
@@ -37,12 +37,13 @@ export const Posts : CollectionConfig = {
                 { name : "paragraph" , type : "textarea"  }
             ],
          },
-         
     ],
+  
     upload : {
+        filesRequiredOnCreate :  true ,
         staticDir : "posts" ,
         staticURL : "/posts",
-        mimeTypes : ["image/*"],
+        mimeTypes : ["image/webp"],
         imageSizes : [
             { 
                 name : "thumbnail" ,
@@ -68,4 +69,7 @@ export const Posts : CollectionConfig = {
         ],
     }
 
+
 } 
+
+

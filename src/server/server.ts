@@ -17,7 +17,8 @@ const start =  async () => {
 
     nextApp.prepare().then( () => {
     app.listen( PORT,  () => {
-        console.log(`Server up at ${process.env.SERVER_PUBLIC_URL}`) 
+        payload.logger.info(`Server up at ${process.env.SERVER_PUBLIC_URL}`) 
+        payload.logger.info(`Admin URL at ${process.env.SERVER_PUBLIC_URL}/admin`) 
     })
 })
 } 
